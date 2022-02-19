@@ -17,6 +17,8 @@ class ViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
         
         tap(sut.button)
+        
+        mockURLSession.verifyDataTask(with: URLRequest(url: URL(string: "https://itunes.apple.com/search?media=ebook&term=out%20from%20bonneville")!))
     }
 
 }
